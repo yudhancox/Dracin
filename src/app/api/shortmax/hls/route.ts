@@ -6,26 +6,7 @@ import crypto from "crypto";
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
-// ═══════════════════════════════════════════════════════════════
-//  ShortMax Segment Decryption (reverse-engineered via Frida)
-//
-//  Segment structure:
-//    [0,8)      = "shortmax" magic
-//    [8,16)     = version "00000001"
-//    [16,20)    = key position (4 ASCII digits, absolute offset)
-//    [20,24)    = header size "1040"
-//    [24,1024)  = 1000-char random data with AES key embedded
-//    [1024,1040) = 16-byte tail (first block of ciphertext)
-//    [1040,end)  = payload (first 1024 bytes = remaining ciphertext)
-//
-//  Decryption:
-//    1. key_offset = parseInt(header[16:20]) - 24
-//    2. AES key = 16 bytes from key_data[key_offset : key_offset+16]
-//    3. IV = "shortmax00000000"
-//    4. Ciphertext = tail16 + payload[0:1024] = 1040 bytes
-//    5. AES-128-CBC/PKCS5 → 1024 bytes of clean TS data
-//    6. Clean segment = decrypted + payload[1024:]
-// ═══════════════════════════════════════════════════════════════
+
 const AES_IV = Buffer.from('shortmax00000000', 'ascii');
 
 function decryptSegment(buf: Buffer): Buffer {
