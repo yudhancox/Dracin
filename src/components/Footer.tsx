@@ -20,26 +20,26 @@ export function Footer() {
           {/* <ul className="space-y-2 text-sm">
               <li>
                 <a 
-                  href="https://lynk.id/sansekai/6gdx3w875wx1" 
+                  href="https://t.me/dramachina" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1 text-primary hover:underline font-semibold"
                 >
-                  Beli Source Code Website Ini
+                  Klik di sini
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
           </ul> */}
 
           <p className="text-sm text-muted-foreground text-center">
-            API yang digunakan:{" "}
+            nonton hanya di:{" "}
             <a 
-                  href="https://api.sansekai.my.id" 
+                  href="https://t.me/dramachina" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1 text-primary hover:underline font-semibold"
                 >
-                  SΛNSΞKΛI API
+                  telegram @dramachina
                   <ExternalLink className="w-3 h-3" />
                 </a>
           </p>
